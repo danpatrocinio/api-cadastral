@@ -16,10 +16,10 @@ public class ApiCadastral {
         SpringApplication.run(ApiCadastral.class, args);
     }
 
-    @Bean
-    public CommandLineRunner createAdminUser(UsuarioRepository usuarioRepository) {
-        return (args) -> {
-            usuarioRepository.save(new Usuario(1L, "admin", Base64.getEncoder().encodeToString("admin".getBytes()), "Administrador"));
-        };
-    }
+//    @Bean
+//    public CommandLineRunner createAdminUser(UsuarioRepository usuarioRepository) {
+//        return (args) -> {
+//            usuarioRepository.save(new Usuario(1L, "admin", Base64.getEncoder().encodeToString("admin".getBytes()), "Administrador"));
+//        };
+//    }
 }
