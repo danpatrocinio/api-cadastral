@@ -1,6 +1,6 @@
 # api-cadastral
 
-##### requerimentos em ambiente DEV 
+##### Requerimentos em ambiente DEV 
     * Maven 3.x
     * Java 8
     * H2 memory database
