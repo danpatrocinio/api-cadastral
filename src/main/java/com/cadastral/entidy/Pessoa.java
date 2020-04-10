@@ -1,18 +1,14 @@
 package com.cadastral.entidy;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.envers.Audited;
 import org.hibernate.validator.constraints.br.CPF;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 /* Requisitos:
@@ -28,31 +24,27 @@ import java.util.Date;
 */
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@EntityListeners(AuditingEntityListener.class)
-public class Pessoa {
+@Audited
+public class Pessoa extends Auditable<String> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @CPF
+    @CPF(message = "{Generic.invalid.cpf}")
     @Column(unique = true)
     @NotNull(message = "{Pessoa.cpf.NotNull}")
     private String cpf;
     @NotNull(message = "{Pessoa.nome.NotNull}")
     private String nome;
     private String sexo;
-    @Email
+    @Email(message = "{Generic.invalid.email}")
     private String email;
     @Past(message = "{Pessoa.dtNascimento.Past}")
     @NotNull(message = "{Pessoa.dtNascimento.NotNull}")
     private Date dataNascimento;
     private String naturalidade;
     private String nacionalidade;
-    @CreatedDate
-    private LocalDateTime dtCreated;
-    @LastModifiedDate
-    private LocalDateTime dtUpdated;
+
 }
