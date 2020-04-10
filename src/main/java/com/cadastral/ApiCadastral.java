@@ -1,13 +1,7 @@
 package com.cadastral;
 
-import com.cadastral.entidy.Usuario;
-import com.cadastral.repository.UsuarioRepository;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
-import java.util.Base64;
 
 @SpringBootApplication
 public class ApiCadastral {
