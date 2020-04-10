@@ -7,4 +7,4 @@
 
 ##### Execução em ambinte DEV
     * usuário admin com senha admin criado automaticamente
-    * service publicado em http://localhost:8080/api-cadastral
+    * api publicada em http://localhost:8080/api-cadastral
