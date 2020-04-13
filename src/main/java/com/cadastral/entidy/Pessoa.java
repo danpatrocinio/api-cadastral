@@ -9,7 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -30,7 +30,7 @@ public class Pessoa extends Auditable<String> {
     private String email;
     @Past(message = "{Pessoa.dtNascimento.Past}")
     @NotNull(message = "{Pessoa.dtNascimento.NotNull}")
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
     private String sexo;
     private String naturalidade;
     private String nacionalidade;
